@@ -6,8 +6,8 @@
   <title>klmat</title>
   
 <script type="module">
-import init, * as bindings from './wordcraft-web-1b870601219e3b83.js';
-const wasm = await init({ module_or_path: './wordcraft-web-1b870601219e3b83_bg.wasm' });
+import init, * as bindings from './wordcraft-web-7b9b7bb1f5b2c6c5.js';
+const wasm = await init({ module_or_path: './wordcraft-web-7b9b7bb1f5b2c6c5_bg.wasm' });
 
 
 window.wasmBindings = bindings;
@@ -55,7 +55,7 @@ dispatchEvent(new CustomEvent("TrunkApplicationStarted", {detail: {wasm}}));
     #status:not(.err) { display: none; }
   </style>
   <link href="https://fonts.googleapis.com/css2?family=Bricolage+Grotesque:opsz,wght@12..96,800&display=swap" rel="stylesheet">
-<link rel="modulepreload" href="./wordcraft-web-1b870601219e3b83.js" crossorigin="anonymous" integrity="sha384-r46lO8v5gRtn7PzcgvCZ96Kc5FJwxoe+x4y3URND4R0HwYGTKGHi3i3opChA8KyQ"><link rel="preload" href="./wordcraft-web-1b870601219e3b83_bg.wasm" crossorigin="anonymous" integrity="sha384-LfY8tCN99x4cZuCkVxYDoDc+lTs7kgehtFg8gBFYiaHmg23tIBNi6lglr9IQpjeb" as="fetch" type="application/wasm">  <link rel="icon" type="image/svg+xml" href="favicon.svg">
+<link rel="modulepreload" href="./wordcraft-web-7b9b7bb1f5b2c6c5.js" crossorigin="anonymous" integrity="sha384-DiFkxocKggxUosXjD7AkVe/EtN+NJC6gLFD9jHzdNCzS+yMYSSxpTubzQYeeyTBY"><link rel="preload" href="./wordcraft-web-7b9b7bb1f5b2c6c5_bg.wasm" crossorigin="anonymous" integrity="sha384-L4cixkuQddHIr/9IAg8rQ+fDaICdidWTTKbePobq5MrlGDYG/FD4kqfPt+3//JND" as="fetch" type="application/wasm">  <link rel="icon" type="image/svg+xml" href="favicon.svg">
 </head>
 <body>
   <canvas id="wordcraft_canvas"></canvas>
