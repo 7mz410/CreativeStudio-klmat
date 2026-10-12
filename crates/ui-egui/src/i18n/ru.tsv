@@ -1998,6 +1998,13 @@ preview	Title	Пример
 	Search icons	Поиск значков
 	No icons match your search.	Нет значков, соответствующих поиску.
 	Recolor a one-color picture, such as an icon	Перекрасить одноцветный рисунок, например значок
+	Couldn't make klmat the default: {error}	Не удалось сделать klmat приложением по умолчанию: {error}
+	In Default apps, choose klmat for the document types you want it to open.	В разделе «Приложения по умолчанию» выберите klmat для нужных типов документов.
+	Make klmat the default for Word documents…	Сделать klmat приложением по умолчанию для документов Word…
+	Opens .docx, .doc, .rtf and .odt files and Word templates with klmat from now on.	Отныне файлы .docx, .doc, .rtf и .odt и шаблоны Word будут открываться в klmat.
+	Opens Settings › Default apps, where you choose klmat for .docx and the other document types.	Открывает «Параметры» › «Приложения по умолчанию», где можно выбрать klmat для .docx и других типов документов.
+	To open Word documents with klmat by default: select one in Finder, choose File › Get Info, pick klmat under Open with, then click Change All.	Чтобы открывать документы Word в klmat по умолчанию: выберите документ в Finder, выберите «Файл» › «Свойства», укажите klmat в разделе «Открывать в программе» и нажмите «Изменить все».
+	klmat is now the default app for Word documents.	klmat теперь приложение по умолчанию для документов Word.
 	Templates	Шаблоны
 	Templates and Add-ins	Шаблоны и надстройки
 	Attach Template	Присоединить шаблон
@@ -2135,6 +2142,9 @@ preview	Title	Пример
 	Continuous numbering	Сквозная нумерация
 	Apply	Применить
 	Convert Notes	Преобразовать сноски
+	Do Not Check Spelling or Grammar	Не проверять орфографию и грамматику
+	English (United Kingdom)	Английский (Великобритания)
+	Polish	Польский
 
 # Built-in file browser (#576).
 	Documents	Документы
@@ -2326,7 +2336,6 @@ preview	Title	Пример
 	Detect language automatically	Определять язык автоматически
 	Do not check spelling or grammar	Не проверять орфографию и грамматику
 	Dutch	Нидерландский
-	English (United Kingdom)	Английский (Великобритания)
 	Envelope size:	Размер конверта:
 	Estonian	Эстонский
 	Finnish	Финский
@@ -2355,7 +2364,6 @@ preview	Title	Пример
 	Numbering:	Нумерация:
 	Omit	Пропустить
 	One label per recipient	Одна наклейка на получателя
-	Polish	Польский
 	Portuguese (Brazil)	Португальский (Бразилия)
 	Portuguese (Portugal)	Португальский (Португалия)
 	Return address labels	Наклейки с обратным адресом

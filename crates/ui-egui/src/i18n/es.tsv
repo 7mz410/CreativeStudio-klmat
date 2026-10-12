@@ -280,6 +280,7 @@
 	Copy	Copiar
 	Copy Formatting	Copiar formato
 	Corrections	Correcciones
+	Couldn't make klmat the default: {error}	No se pudo hacer de klmat la aplicación predeterminada: {error}
 	Count words in text boxes and notes	Contar las palabras de los cuadros de texto y las notas
 	Cover Page	Portada
 	Create	Crear
@@ -449,6 +450,7 @@
 	Immersive	Inmersivo
 	Immersive Reader	Lector inmersivo
 	Immersive\nReader	Lector\ninmersivo
+	In Default apps, choose klmat for the document types you want it to open.	En Aplicaciones predeterminadas, elige klmat para los tipos de documento que quieras que abra.
 	Increase Font Size	Aumentar tamaño de fuente
 	Increase Indent	Aumentar sangría
 	Indent	Sangría
@@ -531,6 +533,7 @@
 	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT o Apache-2.0. Copyright (c) 2026 ArtCraft Team y los colaboradores de klmat.
 	Macros	Macros
 	Mailings	Correspondencia
+	Make klmat the default for Word documents…	Hacer de klmat la aplicación predeterminada para documentos de Word…
 	Manage Sources	Administrar fuentes
 	Many pages	Varias páginas
 	Margins	Márgenes
@@ -602,6 +605,8 @@
 	One Page	Una página
 	Open	Abrir
 	OpenDocument Text (*.odt)	Texto de OpenDocument (*.odt)
+	Opens .docx, .doc, .rtf and .odt files and Word templates with klmat from now on.	A partir de ahora, los archivos .docx, .doc, .rtf y .odt y las plantillas de Word se abren con klmat.
+	Opens Settings › Default apps, where you choose klmat for .docx and the other document types.	Abre Configuración › Aplicaciones predeterminadas, donde eliges klmat para .docx y los demás tipos de documento.
 	Optional Hyphen	Guion opcional
 	Copyright Sign	Signo de copyright
 	Ellipsis	Puntos suspensivos
@@ -903,6 +908,7 @@
 	Thick	Gruesa
 	Three	Tres
 	Tight	Ajustado
+	To open Word documents with klmat by default: select one in Finder, choose File › Get Info, pick klmat under Open with, then click Change All.	Para abrir los documentos de Word con klmat de forma predeterminada: selecciona uno en el Finder, elige Archivo › Obtener información, selecciona klmat en «Abrir con» y haz clic en «Cambiar todo».
 	Top Border	Borde superior
 	Top Margin	Margen superior
 	Top of Page	Parte superior de la página
@@ -963,6 +969,7 @@
 	Word XML Document (*.xml)	Documento XML de Word (*.xml)
 	WordArt	WordArt
 	klmat	klmat
+	klmat is now the default app for Word documents.	klmat es ahora la aplicación predeterminada para los documentos de Word.
 	Words	Palabras
 	Words only	Solo palabras
 	Wrap Text	Ajustar texto
@@ -1706,6 +1713,9 @@
 	Continuous numbering	Numeración continua
 	Apply	Aplicar
 	Convert Notes	Convertir notas
+	English (United Kingdom)	Inglés (Reino Unido)
+	Polish	Polaco
+	Do Not Check Spelling or Grammar	No revisar la ortografía ni la gramática
 
 # Built-in file browser when the system file dialog is unavailable (#576)
 	Documents	Documentos
@@ -1996,7 +2006,6 @@
 	Detect language automatically	Detectar idioma automáticamente
 	Do not check spelling or grammar	No revisar la ortografía ni la gramática
 	Dutch	Neerlandés
-	English (United Kingdom)	Inglés (Reino Unido)
 	Envelope size:	Tamaño del sobre:
 	Estonian	Estonio
 	Finnish	Finés
@@ -2025,7 +2034,6 @@
 	Numbering:	Numeración:
 	Omit	Omitir
 	One label per recipient	Una etiqueta por destinatario
-	Polish	Polaco
 	Portuguese (Brazil)	Portugués (Brasil)
 	Portuguese (Portugal)	Portugués (Portugal)
 	Return address labels	Etiquetas de remitente

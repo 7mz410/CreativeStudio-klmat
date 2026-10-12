@@ -271,6 +271,7 @@
 	Copy	Copiar
 	Copy Formatting	Copiar formatação
 	Corrections	Correções
+	Couldn't make klmat the default: {error}	Não foi possível tornar o klmat o aplicativo padrão: {error}
 	Count words in text boxes and notes	Contar palavras em caixas de texto e notas
 	Cover Page	Capa
 	Create	Criar
@@ -308,11 +309,15 @@
 	Drag a rectangle to draw a table, or a line across cells to split them. Esc stops.	Arraste um retângulo para desenhar uma tabela, ou uma linha sobre as células para dividi-las. Esc encerra.
 	Draw Table	Desenhar tabela
 	Edit Comment	Editar comentário
+	In Default apps, choose klmat for the document types you want it to open.	Em Aplicativos padrão, escolha o klmat para os tipos de documento que você quer que ele abra.
 	Left Margin	Margem esquerda
 	Indents and Spacing	Recuos e espaçamento
 	Line breaking	Quebra de linhas
+	Make klmat the default for Word documents…	Tornar o klmat o aplicativo padrão para documentos do Word…
 	More templates →	Mais modelos →
 	No templates match your search.	Nenhum modelo corresponde à pesquisa.
+	Opens .docx, .doc, .rtf and .odt files and Word templates with klmat from now on.	A partir de agora, arquivos .docx, .doc, .rtf e .odt e modelos do Word abrem no klmat.
+	Opens Settings › Default apps, where you choose klmat for .docx and the other document types.	Abre Configurações › Aplicativos padrão, onde você escolhe o klmat para .docx e os outros tipos de documento.
 	Reopen	Reabrir
 	Right Margin	Margem direita
 	Distribute letters	Distribuir letras
@@ -322,6 +327,8 @@
 	Right (vertical)	Direita (vertical)
 	Ruby text:	Texto ruby:
 	Search for templates	Pesquisar modelos
+	To open Word documents with klmat by default: select one in Finder, choose File › Get Info, pick klmat under Open with, then click Change All.	Para abrir documentos do Word com o klmat por padrão: selecione um no Finder, escolha Arquivo › Obter Informações, selecione o klmat em “Abrir com” e clique em “Alterar Tudo”.
+	klmat is now the default app for Word documents.	O klmat agora é o aplicativo padrão para documentos do Word.
 	development build	versão de desenvolvimento
 	Diagonal	Diagonal
 	Diamond	Losango
@@ -1702,6 +1709,9 @@
 	Continuous numbering	Numeração contínua
 	Apply	Aplicar
 	Convert Notes	Converter notas
+	English (United Kingdom)	Inglês (Reino Unido)
+	Polish	Polonês
+	Do Not Check Spelling or Grammar	Não verificar ortografia nem gramática
 
 # Built-in file browser when the system file dialog is unavailable (#576)
 	Documents	Documentos
@@ -1992,7 +2002,6 @@
 	Detect language automatically	Detectar o idioma automaticamente
 	Do not check spelling or grammar	Não verificar ortografia nem gramática
 	Dutch	Holandês
-	English (United Kingdom)	Inglês (Reino Unido)
 	Envelope size:	Tamanho do envelope:
 	Estonian	Estoniano
 	Finnish	Finlandês
@@ -2021,7 +2030,6 @@
 	Numbering:	Numeração:
 	Omit	Omitir
 	One label per recipient	Uma etiqueta por destinatário
-	Polish	Polonês
 	Portuguese (Brazil)	Português (Brasil)
 	Portuguese (Portugal)	Português (Portugal)
 	Return address labels	Etiquetas de remetente
