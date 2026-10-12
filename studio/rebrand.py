@@ -16,7 +16,7 @@ REPO = 'https://github.com/7mz410/CreativeStudio-klmat'
 SITE = 'https://studio.creative.ps'
 APP_SITE = 'https://klmat.studio.creative.ps'
 # Persisted names and legal lines; renaming them would lose settings or misstate copyright.
-KEEP = ('Application Support/WordCraft', '/roaming/WordCraft', 'the WordCraft authors', 'WordCraft contributors', 'WORDCRAFT_')
+KEEP = ('by the ArtCraft team', 'Application Support/WordCraft', '/roaming/WordCraft', 'the WordCraft authors', 'WordCraft contributors', 'WORDCRAFT_')
 
 # (file, upstream text, our text[, marker meaning "already applied"]). The upstream text may also
 # be found in its renamed form (after the general rename below).
