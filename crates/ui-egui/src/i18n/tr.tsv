@@ -19,7 +19,7 @@
 	1.5 Line Spacing	1,5 Satır Aralığı
 	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.	Rust ile sıfırdan yazılmış ücretsiz, açık kaynak bir kelime işlemci.\nArtCraft ekibinin Crafting Apps ailesinin bir parçası.
 	About	Hakkında
-	About WordCraft	WordCraft Hakkında
+	About klmat	klmat Hakkında
 	Accept	Kabul Et
 	Accept All Changes	Tüm Değişiklikleri Kabul Et
 	Accept This Change	Bu Değişikliği Kabul Et
@@ -360,7 +360,7 @@
 	Inspect Styles at Selection	Seçimdeki Stilleri İncele
 	Interface language:	Arayüz dili:
 	Italic	İtalik
-	Join the ArtCraft community on Discord	Discord'da ArtCraft topluluğuna katılın
+	Creative Studio	Discord'da ArtCraft topluluğuna katılın
 	Join us on Discord: discord.gg/artcraft	Discord'da bize katılın: discord.gg/artcraft
 	Justify	İki Yana Yasla
 	Keep Lines Together	Satırları Birlikte Tut
@@ -400,7 +400,7 @@
 	Link to Previous	Öncekine Bağla
 	Links	Bağlantılar
 	Location: {path}	Konum: {path}
-	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT OR Apache-2.0. Telif hakkı (c) 2026 ArtCraft ekibi ve WordCraft'a katkıda bulunanlar.
+	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT OR Apache-2.0. Telif hakkı (c) 2026 ArtCraft ekibi ve klmat'a katkıda bulunanlar.
 	Macros	Makrolar
 	Mailings	Postalar
 	Manage Sources	Kaynakları Yönet
@@ -808,7 +808,7 @@
 	Word Right	Sonraki Sözcük
 	Word document (*.docx)	Word belgesi (*.docx)
 	WordArt	WordArt
-	WordCraft	WordCraft
+	klmat	klmat
 	Words	Sözcükler
 	Words only	Yalnızca sözcükler
 	Wrap Text	Metni Kaydır
@@ -874,7 +874,7 @@
 	Stopped	Durduruldu
 	Speed	Hız
 	Normal speed	Normal hız
-	AutoSave documents you have saved in WordCraft	WordCraft'ta kaydettiğiniz belgeleri otomatik kaydet
+	AutoSave documents you have saved in klmat	klmat'ta kaydettiğiniz belgeleri otomatik kaydet
 	AutoSave failed: {error}. Save the document to turn AutoSave back on.	Otomatik Kaydet başarısız oldu: {error}. Otomatik Kaydet'i yeniden açmak için belgeyi kaydedin.
 	Couldn't download {name}: {error}	{name} indirilemedi: {error}
 	Do you want to save changes to {name}?	{name} içindeki değişiklikleri kaydetmek istiyor musunuz?
@@ -1268,7 +1268,7 @@
 	The document will be saved with a password. Save it to protect it.	Belge parolayla kaydedilecek. Korumak için belgeyi kaydedin.
 	The password is removed. Save the document to keep the change.	Parola kaldırıldı. Değişikliği korumak için belgeyi kaydedin.
 	The passwords don't match.	Parolalar eşleşmiyor.
-	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.	Parolayı güvenli bir yerde saklayın: parola olmadan WordCraft dahil hiç kimse belgeyi açamaz. Parolayı kaldırmak için iki kutuyu da boş bırakın.
+	Keep the password somewhere safe: without it nobody, klmat included, can open the document. Leave both boxes empty to remove the password.	Parolayı güvenli bir yerde saklayın: parola olmadan klmat dahil hiç kimse belgeyi açamaz. Parolayı kaldırmak için iki kutuyu da boş bırakın.
 	Align Top Left	Sol Üste Hizala
 	Align Top Center	Üst Ortaya Hizala
 	Align Top Right	Sağ Üste Hizala
@@ -1763,7 +1763,7 @@
 	Word document	Word belgesi
 	All files	Tüm dosyalar
 	Recipient lists	Alıcı listeleri
-	The system file dialog isn't available, so WordCraft shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	Sistemin dosya iletişim kutusu kullanılamadığı için WordCraft kendi iletişim kutusunu gösteriyor. Sistem iletişim kutusunu kullanmak için bir dosya seçici portalı (örneğin xdg-desktop-portal-gtk) ya da zenity yükleyin.
+	The system file dialog isn't available, so klmat shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	Sistemin dosya iletişim kutusu kullanılamadığı için klmat kendi iletişim kutusunu gösteriyor. Sistem iletişim kutusunu kullanmak için bir dosya seçici portalı (örneğin xdg-desktop-portal-gtk) ya da zenity yükleyin.
 	Up one level	Bir düzey yukarı
 	Home folder	Ana klasör
 	{name} wasn't found.	{name} bulunamadı.
@@ -1771,8 +1771,8 @@
 	This folder can't be read: {error}	Bu klasör okunamıyor: {error}
 	Showing the first {count} items.	İlk {count} öğe gösteriliyor.
 	File name:	Dosya adı:
-	Browse in WordCraft…	WordCraft'ta Gözat…
-	Open a file with WordCraft's own browser when the system file dialog doesn't appear.	Sistemin dosya iletişim kutusu açılmadığında dosyayı WordCraft'ın kendi dosya tarayıcısıyla açın.
+	Browse in klmat…	klmat'ta Gözat…
+	Open a file with klmat's own browser when the system file dialog doesn't appear.	Sistemin dosya iletişim kutusu açılmadığında dosyayı klmat'ın kendi dosya tarayıcısıyla açın.
 	Hide White Space	Boşluğu gizle
 	All pages	Tüm sayfalar
 	Current page	Geçerli sayfa

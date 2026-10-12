@@ -607,7 +607,7 @@ fn turkish_covers_the_entire_existing_interface_catalog_and_preserves_templates(
         ("Save", "Kaydet"),
         ("UPPERCASE", "BÜYÜK HARF"),
         ("lowercase", "küçük harf"),
-        ("WordCraft", "WordCraft"),
+        ("klmat", "klmat"),
         ("unknown future label", "unknown future label"),
     ] {
         assert_eq!(super::tr(tr, source), expected);

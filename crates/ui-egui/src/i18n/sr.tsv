@@ -22,7 +22,7 @@
 	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.	Бесплатан, отворени обрађивач текста написан од нуле у Rust-у.\nДео Crafting Apps пакета тима ArtCraft.
 	A password is required to open this document.	За отварање овог документа потребна је лозинка.
 	About	О програму
-	About WordCraft	О WordCraft-у
+	About klmat	О klmat-у
 	Accept	Прихвати
 	Accept All Changes	Прихвати све измене
 	Accept This Change	Прихвати ову измену
@@ -84,7 +84,7 @@
 	Automatic Table 1 (3 levels)	Аутоматска табела 1 (3 нивоа)
 	Automatic Table 2 (2 levels)	Аутоматска табела 2 (2 нивоа)
 	AutoSave	Аутоматско чување
-	AutoSave documents you have saved in WordCraft	Аутоматски чувај документе које сте већ сачували у WordCraft-у
+	AutoSave documents you have saved in klmat	Аутоматски чувај документе које сте већ сачували у klmat-у
 	AutoSave failed: {error}. Save the document to turn AutoSave back on.	Аутоматско чување неуспело: {error}. Сачувајте документ да бисте га поново укључили.
 	Balloons	Облачићи
 	Bottom Margin	Доња маргина
@@ -177,7 +177,7 @@
 	Glow Colors	Боје сјаја
 	Hide from style lists	Сакриј са листа стилова
 	Indents and Spacing	Увлачења и размаци
-	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.	Чувајте лозинку на сигурном месту: без ње нико, па ни WordCraft, не може да отвори документ. Оставите оба поља празна да бисте уклонили лозинку.
+	Keep the password somewhere safe: without it nobody, klmat included, can open the document. Leave both boxes empty to remove the password.	Чувајте лозинку на сигурном месту: без ње нико, па ни klmat, не може да отвори документ. Оставите оба поља празна да бисте уклонили лозинку.
 	Line breaking	Прелом редова
 	Linked style (paragraph and character)	Повезани стил (пасус и знакови)
 	Manage Styles	Управљање стиловима
@@ -536,7 +536,7 @@
 	Inspect Document	Прегледај документ
 	Interface language:	Језик интерфејса:
 	Italic	Курзив
-	Join the ArtCraft community on Discord	Придружите се ArtCraft заједници на Discord-у
+	Creative Studio	Придружите се ArtCraft заједници на Discord-у
 	Join us on Discord: discord.gg/artcraft	Придружите нам се на Discord-у: discord.gg/artcraft
 	Justify	Обострано поравнање
 	Keep Lines Together	Задржи редове заједно
@@ -593,7 +593,7 @@
 	Merge Formatting	Споји форматирање
 	Merged PRs	Спојени PR-ови
 	Mirrored	Зрцаљено
-	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT OR Apache-2.0. Ауторска права (c) 2026 ArtCraft Team и сарадници на WordCraft-у.
+	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT OR Apache-2.0. Ауторска права (c) 2026 ArtCraft Team и сарадници на klmat-у.
 	Moderate	Умерено
 	Modify Style	Измени стил
 	Modify…	Измени…
@@ -1002,7 +1002,7 @@
 	Word Left	Реч лево
 	Word Right	Реч десно
 	WordArt	WordArt
-	WordCraft	WordCraft
+	klmat	klmat
 	Words	Речи
 	Words only	Само речи
 	Wrap Text	Преломи текст
@@ -1710,7 +1710,7 @@
 	Word document	Word документ
 	All files	Све датотеке
 	Recipient lists	Листе прималаца
-	The system file dialog isn't available, so WordCraft shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	Системски дијалог за датотеке није доступан, па WordCraft приказује свој. Да бисте добили системски дијалог, инсталирајте портал за избор датотека (на пример xdg-desktop-portal-gtk) или zenity.
+	The system file dialog isn't available, so klmat shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	Системски дијалог за датотеке није доступан, па klmat приказује свој. Да бисте добили системски дијалог, инсталирајте портал за избор датотека (на пример xdg-desktop-portal-gtk) или zenity.
 	Up one level	Један ниво горе
 	Home folder	Лична фасцикла
 	{name} wasn't found.	{name} није пронађен.
@@ -1718,8 +1718,8 @@
 	This folder can't be read: {error}	Ова фасцикла не може да се прочита: {error}
 	Showing the first {count} items.	Приказане су само прве ставке: {count}.
 	File name:	Име датотеке:
-	Browse in WordCraft…	Потражи у WordCraft-у…
-	Open a file with WordCraft's own browser when the system file dialog doesn't appear.	Отворите датотеку помоћу WordCraft-овог прегледача када се системски дијалог за датотеке не појави.
+	Browse in klmat…	Потражи у klmat-у…
+	Open a file with klmat's own browser when the system file dialog doesn't appear.	Отворите датотеку помоћу klmat-овог прегледача када се системски дијалог за датотеке не појави.
 	Hide White Space	Сакриј празан простор
 	All pages	Све странице
 	Current page	Тренутна страница

@@ -7,13 +7,13 @@
   <key>CFBundleDevelopmentRegion</key>
   <string>en</string>
   <key>CFBundleDisplayName</key>
-  <string>WordCraft</string>
+  <string>klmat</string>
   <key>CFBundleName</key>
-  <string>WordCraft</string>
+  <string>klmat</string>
   <key>CFBundleExecutable</key>
   <string>WordCraft</string>
   <key>CFBundleIdentifier</key>
-  <string>ai.storyteller.wordcraft</string>
+  <string>ps.creative.studio.klmat</string>
   <key>CFBundleInfoDictionaryVersion</key>
   <string>6.0</string>
   <key>CFBundlePackageType</key>

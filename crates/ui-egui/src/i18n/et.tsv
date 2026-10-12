@@ -13,7 +13,7 @@
 	1.5 Line Spacing	Reavahe 1,5
 	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.	Tasuta avatud lähtekoodiga tekstitöötlusprogramm, mis on kirjutatud Rustis.\nArtCrafti meeskonna Crafting Appsi osa.
 	About	Teave
-	About WordCraft	WordCrafti teave
+	About klmat	klmati teave
 	Accept	Nõustu
 	Accept All Changes	Nõustu kõigi muudatustega
 	Accept This Change	Nõustu selle muudatusega
@@ -370,7 +370,7 @@
 	Interface language	Kasutajaliidese keel
 	Interface language:	Kasutajaliidese keel:
 	Italic	Kaldkiri
-	Join the ArtCraft community on Discord	Liitu ArtCrafti kogukonnaga Discordis
+	Creative Studio	Liitu ArtCrafti kogukonnaga Discordis
 	Join us on Discord: discord.gg/artcraft	Liitu meiega Discordis: discord.gg/artcraft
 	Justify	Rööpjoonda
 	Keep Lines Together	Hoia read koos
@@ -411,7 +411,7 @@
 	Links	Lingid
 	Location: {path}	Asukoht: {path}
 	Mirror indents	Peegelda taanded
-	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT OR Apache-2.0. Autoriõigus (c) 2026 ArtCrafti meeskond ja WordCrafti kaasautorid.
+	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT OR Apache-2.0. Autoriõigus (c) 2026 ArtCrafti meeskond ja klmati kaasautorid.
 	Macros	Makrod
 	Mailings	Postitused
 	Manage Sources	Halda allikaid
@@ -846,7 +846,7 @@
 	Word document (*.docx)	Wordi dokument (*.docx)
 	Word XML Document (*.xml)	Wordi XML-dokument (*.xml)
 	WordArt	WordArt
-	WordCraft	WordCraft
+	klmat	klmat
 	Words	Sõnad
 	Words only	Ainult sõnad
 	Wrap Text	Mähi tekst
@@ -911,7 +911,7 @@
 	Stopped	Lõpetatud
 	Speed	Kiirus
 	Normal speed	Tavaline kiirus
-	AutoSave documents you have saved in WordCraft	Salvesta WordCraftis salvestatud dokumendid automaatselt
+	AutoSave documents you have saved in klmat	Salvesta klmatis salvestatud dokumendid automaatselt
 	AutoSave failed: {error}. Save the document to turn AutoSave back on.	Automaatsalvestus ebaõnnestus: {error}. Selle uuesti sisse lülitamiseks salvesta dokument.
 	Couldn't download {name}: {error}	Faili {name} allalaadimine ebaõnnestus: {error}
 	Do you want to save changes to {name}?	Kas soovid faili {name} muudatused salvestada?
@@ -1175,7 +1175,7 @@
 	The document will be saved with a password. Save it to protect it.	Dokument salvestatakse parooliga. Kaitsmiseks salvesta see.
 	The password is removed. Save the document to keep the change.	Parool on eemaldatud. Muudatuse säilitamiseks salvesta dokument.
 	The passwords don't match.	Paroolid ei ühti.
-	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.	Hoia parooli kindlas kohas: ilma selleta ei saa keegi, ka WordCraft, dokumenti avada. Parooli eemaldamiseks jäta mõlemad väljad tühjaks.
+	Keep the password somewhere safe: without it nobody, klmat included, can open the document. Leave both boxes empty to remove the password.	Hoia parooli kindlas kohas: ilma selleta ei saa keegi, ka klmat, dokumenti avada. Parooli eemaldamiseks jäta mõlemad väljad tühjaks.
 	Align Top Left	Joonda üles vasakule
 	Align Top Center	Joonda üles keskele
 	Align Top Right	Joonda üles paremale
@@ -1673,7 +1673,7 @@
 	Word document	Wordi dokument
 	All files	Kõik failid
 	Recipient lists	Adressaatide loendid
-	The system file dialog isn't available, so WordCraft shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	Süsteemi failidialoog pole saadaval, seega näitab WordCraft enda oma. Süsteemi dialoogi saamiseks paigalda failivalija portaal (näiteks xdg-desktop-portal-gtk) või zenity.
+	The system file dialog isn't available, so klmat shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	Süsteemi failidialoog pole saadaval, seega näitab klmat enda oma. Süsteemi dialoogi saamiseks paigalda failivalija portaal (näiteks xdg-desktop-portal-gtk) või zenity.
 	Up one level	Taseme võrra üles
 	Home folder	Kodukaust
 	{name} wasn't found.	{name} ei leitud.
@@ -1681,8 +1681,8 @@
 	This folder can't be read: {error}	Seda kausta ei saa lugeda: {error}
 	Showing the first {count} items.	Kuvatud on ainult esimesed kirjed: {count}.
 	File name:	Faili nimi:
-	Browse in WordCraft…	Sirvi WordCraftis…
-	Open a file with WordCraft's own browser when the system file dialog doesn't appear.	Ava fail WordCrafti enda failisirvijaga, kui süsteemi failidialoog ei ilmu.
+	Browse in klmat…	Sirvi klmatis…
+	Open a file with klmat's own browser when the system file dialog doesn't appear.	Ava fail klmati enda failisirvijaga, kui süsteemi failidialoog ei ilmu.
 	Hide White Space	Peida tühi ala lehtede vahel
 	All pages	Kõik leheküljed
 	Current page	Praegune lehekülg

@@ -18,7 +18,7 @@
 	1.5 Line Spacing	Interlineado 1,5
 	A free, open-source word processor written from scratch in Rust.\nPart of the Crafting Apps from the ArtCraft team.	Un procesador de textos gratuito y de código abierto, escrito desde cero en Rust.\nForma parte de las Crafting Apps del equipo de ArtCraft.
 	About	Acerca de
-	About WordCraft	Acerca de WordCraft
+	About klmat	Acerca de klmat
 	Accept	Aceptar
 	Accept All Changes	Aceptar todos los cambios
 	Accept This Change	Aceptar este cambio
@@ -487,7 +487,7 @@
 	Inspect Styles at Selection	Inspeccionar estilos de la selección
 	Interface language:	Idioma de la interfaz:
 	Italic	Cursiva
-	Join the ArtCraft community on Discord	Únete a la comunidad de ArtCraft en Discord
+	Creative Studio	Únete a la comunidad de ArtCraft en Discord
 	Join us on Discord: discord.gg/artcraft	Únete a nosotros en Discord: discord.gg/artcraft
 	Justify	Justificar
 	Keep Lines Together	Mantener líneas juntas
@@ -528,7 +528,7 @@
 	Link to Previous	Vincular con el anterior
 	Links	Vínculos
 	Location: {path}	Ubicación: {path}
-	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT o Apache-2.0. Copyright (c) 2026 ArtCraft Team y los colaboradores de WordCraft.
+	MIT OR Apache-2.0. Copyright (c) 2026 ArtCraft Team and the WordCraft contributors.	MIT o Apache-2.0. Copyright (c) 2026 ArtCraft Team y los colaboradores de klmat.
 	Macros	Macros
 	Mailings	Correspondencia
 	Manage Sources	Administrar fuentes
@@ -962,7 +962,7 @@
 	Word document (*.docx)	Documento de Word (*.docx)
 	Word XML Document (*.xml)	Documento XML de Word (*.xml)
 	WordArt	WordArt
-	WordCraft	WordCraft
+	klmat	klmat
 	Words	Palabras
 	Words only	Solo palabras
 	Wrap Text	Ajustar texto
@@ -1031,7 +1031,7 @@
 	Stopped	Detenido
 	Speed	Velocidad
 	Normal speed	Velocidad normal
-	AutoSave documents you have saved in WordCraft	Autoguardar los documentos que hayas guardado en WordCraft
+	AutoSave documents you have saved in klmat	Autoguardar los documentos que hayas guardado en klmat
 	AutoSave failed: {error}. Save the document to turn AutoSave back on.	Error de autoguardado: {error}. Guarda el documento para volver a activar el autoguardado.
 	Couldn't download {name}: {error}	No se pudo descargar {name}: {error}
 	Do you want to save changes to {name}?	¿Quieres guardar los cambios en {name}?
@@ -1339,7 +1339,7 @@
 	The document will be saved with a password. Save it to protect it.	El documento se guardará con contraseña. Guárdalo para protegerlo.
 	The password is removed. Save the document to keep the change.	Se quitó la contraseña. Guarda el documento para conservar el cambio.
 	The passwords don't match.	Las contraseñas no coinciden.
-	Keep the password somewhere safe: without it nobody, WordCraft included, can open the document. Leave both boxes empty to remove the password.	Guarda la contraseña en un lugar seguro: sin ella nadie, ni siquiera WordCraft, puede abrir el documento. Deja ambos cuadros vacíos para quitar la contraseña.
+	Keep the password somewhere safe: without it nobody, klmat included, can open the document. Leave both boxes empty to remove the password.	Guarda la contraseña en un lugar seguro: sin ella nadie, ni siquiera klmat, puede abrir el documento. Deja ambos cuadros vacíos para quitar la contraseña.
 
 # Interface text routed through translation (#313)
 	Align Top Left	Alinear arriba a la izquierda
@@ -1712,7 +1712,7 @@
 	Word document	Documento de Word
 	All files	Todos los archivos
 	Recipient lists	Listas de destinatarios
-	The system file dialog isn't available, so WordCraft shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	El cuadro de diálogo de archivos del sistema no está disponible, así que WordCraft muestra el suyo. Para usar el del sistema, instala un portal selector de archivos (como xdg-desktop-portal-gtk) o zenity.
+	The system file dialog isn't available, so klmat shows its own. To get the system dialog, install a file chooser portal (such as xdg-desktop-portal-gtk) or zenity.	El cuadro de diálogo de archivos del sistema no está disponible, así que klmat muestra el suyo. Para usar el del sistema, instala un portal selector de archivos (como xdg-desktop-portal-gtk) o zenity.
 	Up one level	Subir un nivel
 	Home folder	Carpeta personal
 	{name} wasn't found.	No se encontró {name}.
@@ -1720,8 +1720,8 @@
 	This folder can't be read: {error}	No se puede leer esta carpeta: {error}
 	Showing the first {count} items.	Se muestran los primeros {count} elementos.
 	File name:	Nombre de archivo:
-	Browse in WordCraft…	Examinar en WordCraft…
-	Open a file with WordCraft's own browser when the system file dialog doesn't appear.	Abre un archivo con el explorador propio de WordCraft cuando no aparece el cuadro de diálogo de archivos del sistema.
+	Browse in klmat…	Examinar en klmat…
+	Open a file with klmat's own browser when the system file dialog doesn't appear.	Abre un archivo con el explorador propio de klmat cuando no aparece el cuadro de diálogo de archivos del sistema.
 	Hide White Space	Ocultar espacio en blanco
 	All pages	Todas las páginas
 	Current page	Página actual
