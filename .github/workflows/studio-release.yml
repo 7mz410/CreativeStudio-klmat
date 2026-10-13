@@ -20,5 +20,5 @@ jobs:
       app: klmat
       package: wordcraft
       version_var: WORDCRAFT_VERSION
-      bundle: WordCraft.app
+      bundle: klmat.app
       tag: ${{ github.ref_name }}
