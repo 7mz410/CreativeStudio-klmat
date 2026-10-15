@@ -385,6 +385,19 @@ mod tests {
     }
 
     #[test]
+    fn arabic_has_a_face_without_system_fonts() {
+        // Creative Studio: the web build has no system fonts, so Arabic needs the craft-fonts face.
+        if !CRAFT_FONTS.iter().any(|f| f.scripts.contains(&"Arab")) {
+            return;
+        }
+        let db = FontDb::with_font_dirs(Vec::new());
+        db.set_system_fallback(false);
+        let latin = db.face(DEFAULT_FAMILY, "Regular");
+        let f = db.fallback_for('ب', latin.id()).expect("an Arabic face");
+        assert!(f.covers('ب'), "{f:?}");
+    }
+
+    #[test]
     fn works_without_craft_fonts() {
         // Always true without CRAFT_FONTS_DIR; with it, the bundled fonts must still all load.
         let db = FontDb::with_font_dirs(Vec::new());

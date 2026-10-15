@@ -860,7 +860,10 @@ impl FontDb {
     /// without `CRAFT_FONTS_DIR`), whose system font scan reads `font_dirs`.
     pub fn with_font_dirs(font_dirs: Vec<std::path::PathBuf>) -> Self {
         let mut faces = Vec::new();
-        let craft = crate::japanese_document_fonts().into_iter().chain(crate::chinese_fonts()).map(|f| f.bytes);
+        // Creative Studio: the craft-fonts Arabic faces too, or the web build (no system fonts)
+        // shows boxes for Arabic.
+        let arabic = crate::CRAFT_FONTS.iter().filter(|f| f.scripts.contains(&"Arab"));
+        let craft = crate::japanese_document_fonts().into_iter().chain(crate::chinese_fonts()).chain(arabic).map(|f| f.bytes);
         for data in BUNDLED.iter().copied().chain(craft) {
             for f in enumerate_faces(data) {
                 if let Some(mut face) = make_face(FontBytes::Static(data), f.index, f.family, f.style, f.legacy, f.coords) {
