@@ -55,7 +55,8 @@ fn craft_fonts(dir: &std::path::Path) -> Result<(String, Vec<String>), String> {
         let [family, style, file, scripts, ..] = f.as_slice() else {
             return Err(format!("malformed manifest line: {line}"));
         };
-        if wasm && !(*family == "BIZ UDPGothic" && *style == "Regular") {
+        // Creative Studio: the web build also embeds Noto Sans Arabic, or Arabic text shows boxes.
+        if wasm && !(*style == "Regular" && matches!(*family, "BIZ UDPGothic" | "Noto Sans Arabic")) {
             continue;
         }
         let path = dir.join(file).canonicalize().map_err(|e| format!("{file}: {e}"))?;
