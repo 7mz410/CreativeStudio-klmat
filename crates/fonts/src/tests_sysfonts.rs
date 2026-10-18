@@ -8,9 +8,15 @@ const FAMILY: &str = "Sysfont Sans3";
 
 /// A bundled Source Sans 3 file renamed [`FAMILY`] (as long as the original name).
 fn renamed(file: &str) -> Vec<u8> {
+    renamed_to(file, FAMILY)
+}
+
+/// A bundled Source Sans 3 file renamed `family` (13 characters, as long as the original name).
+fn renamed_to(file: &str, family: &str) -> Vec<u8> {
+    assert_eq!(family.len(), "Source Sans 3".len());
     let mut data = std::fs::read(Path::new(env!("CARGO_MANIFEST_DIR")).join("../../assets/fonts").join(file)).unwrap();
     let utf16 = |s: &str| s.encode_utf16().flat_map(u16::to_be_bytes).collect::<Vec<u8>>();
-    for (from, to) in [(utf16("Source Sans 3"), utf16(FAMILY)), (b"Source Sans 3".to_vec(), FAMILY.as_bytes().to_vec())] {
+    for (from, to) in [(utf16("Source Sans 3"), utf16(family)), (b"Source Sans 3".to_vec(), family.as_bytes().to_vec())] {
         let mut i = 0;
         while let Some(at) = data[i..].windows(from.len()).position(|w| w == from) {
             data[i + at..i + at + to.len()].copy_from_slice(&to);
@@ -404,4 +410,138 @@ fn east_asian_fonts_are_listed_for_the_asian_text_font_box() {
     // Loaded, it is still listed once.
     assert!(db.face("Songti Test", "Regular").is_east_asian());
     assert_eq!(listed(&db), 1);
+}
+
+/// #848: browsing the font list drew each family's name in its own face, loading every family
+/// shown for good (tens of megabytes per trip through the Font box). Preview faces are read for
+/// the preview alone: however many families are previewed, the database keeps no font data, and
+/// each preview face is freed when dropped.
+#[test]
+fn font_list_previews_load_nothing_for_good() {
+    let dir = std::env::temp_dir().join(format!("dc-sysfonts-{}-previews", std::process::id()));
+    let _ = std::fs::remove_dir_all(&dir);
+    std::fs::create_dir_all(&dir).unwrap();
+    let families: Vec<String> = (0..40).map(|i| format!("Preview Fam{i:02}")).collect();
+    for (i, f) in families.iter().enumerate() {
+        std::fs::write(dir.join(format!("p{i}-Regular.ttf")), renamed_to("SourceSans3-Regular.ttf", f)).unwrap();
+        std::fs::write(dir.join(format!("p{i}-Bold.ttf")), renamed_to("SourceSans3-Bold.ttf", f)).unwrap();
+    }
+    let db = FontDb::with_font_dirs(vec![dir.clone()]);
+    let (faces, bytes) = (db.read_faces().len(), db.loaded_font_bytes());
+    // Every family previewed many times over, as reopening the list does.
+    for _ in 0..5 {
+        for f in &families {
+            let face = db.preview_face(f).expect("installed family previews");
+            assert_eq!(face.family, *f);
+            assert_eq!(face.style, "Regular", "the preview shows the Regular face");
+            assert!(face.covers('P'));
+            assert_eq!(Arc::strong_count(&face), 1, "nothing else keeps the preview face (or its data)");
+        }
+    }
+    assert_eq!(db.read_faces().len(), faces, "previews load no faces");
+    assert_eq!(db.loaded_font_bytes(), bytes, "previews keep no font data");
+    assert!(db.preview_face("No Such Family").is_none());
+
+    // Using a font loads it once; previewing it again shares the loaded face.
+    assert_eq!(db.face(&families[0], "Regular").family, families[0]);
+    let used = db.loaded_font_bytes();
+    assert!(used > bytes, "a used family's data is counted");
+    let shared = db.preview_face(&families[0]).unwrap();
+    assert!(Arc::strong_count(&shared) > 1, "a loaded family's preview is the shared face");
+    for _ in 0..3 {
+        for f in &families[1..] {
+            drop(db.preview_face(f));
+        }
+    }
+    assert_eq!(db.loaded_font_bytes(), used, "memory stays bounded across previews");
+    let _ = std::fs::remove_dir_all(&dir);
+}
+
+#[test]
+fn catalog_full_names() {
+    let dir = font_dir("full-name");
+    let db = FontDb::with_font_dirs(vec![dir.clone()]);
+    assert!(!db.is_loaded("Sysfont Sans3 Bold"));
+    assert!(db.has_family("Sysfont Sans3 Bold"));
+    let face = db.face("Sysfont Sans3 Bold", "Regular");
+    assert_eq!((face.family.as_str(), face.style.as_str()), (FAMILY, "Bold"));
+    assert_eq!(db.face("sysfont sans3 bold", "Italic").id(), face.id());
+    assert!(db.is_loaded("Sysfont Sans3 Bold"));
+    assert!(!db.families().iter().any(|n| n == "Sysfont Sans3 Bold"));
+    assert_eq!(db.face(FAMILY, "Regular").style, "Regular");
+    let _ = std::fs::remove_dir_all(dir);
+}
+
+/// Give an OFL test face a complete synthetic name table without adding a font asset.
+fn named_face(file: &str, family: &str) -> Vec<u8> {
+    let mut data = std::fs::read(Path::new(env!("CARGO_MANIFEST_DIR")).join("../../assets/fonts").join(file)).unwrap();
+    let style = if file.contains("Bold") { "Bold" } else { "Regular" };
+    let names =
+        [(1, family.to_string()), (2, style.to_string()), (4, format!("{family} {style}")), (6, format!("{}-{style}", family.replace(' ', "")))];
+    let mut table = Vec::new();
+    table.extend_from_slice(&0u16.to_be_bytes());
+    table.extend_from_slice(&(names.len() as u16).to_be_bytes());
+    table.extend_from_slice(&(6u16 + 12 * names.len() as u16).to_be_bytes());
+    let mut strings = Vec::new();
+    for (id, value) in names {
+        let bytes: Vec<_> = value.encode_utf16().flat_map(u16::to_be_bytes).collect();
+        for n in [3, 1, 0x409, id, bytes.len() as u16, strings.len() as u16] {
+            table.extend_from_slice(&n.to_be_bytes());
+        }
+        strings.extend_from_slice(&bytes);
+    }
+    table.extend_from_slice(&strings);
+    data.resize(data.len().next_multiple_of(4), 0);
+    let offset = data.len() as u32;
+    let count = u16::from_be_bytes(data[4..6].try_into().unwrap()) as usize;
+    let entry = (0..count).map(|i| 12 + i * 16).find(|i| &data[*i..*i + 4] == b"name").unwrap();
+    data[entry + 8..entry + 12].copy_from_slice(&offset.to_be_bytes());
+    data[entry + 12..entry + 16].copy_from_slice(&(table.len() as u32).to_be_bytes());
+    data.extend_from_slice(&table);
+    data
+}
+
+#[test]
+fn circle_uses_installed_face() {
+    let dir = font_dir("circle-fallback");
+    std::fs::write(dir.join("Text-Regular.ttf"), named_face("SourceSans3-Regular.ttf", "Times New Roman")).unwrap();
+    std::fs::write(dir.join("Text-Bold.ttf"), named_face("SourceSans3-Bold.ttf", "Times New Roman")).unwrap();
+    let db = FontDb::with_font_dirs(vec![dir]);
+    let primary = db.face("Source Serif 4", "Regular");
+    assert!(!primary.covers('●'), "the requested face lacks the marker");
+    assert!(!db.is_loaded("Times New Roman"), "fallback must find a cataloged face");
+    db.set_system_fallback(false);
+    assert_eq!(db.fallback_for('●', primary.id()).unwrap().family, FALLBACK_FAMILY);
+    assert!(!db.is_loaded("Times New Roman"));
+    db.set_system_fallback(true);
+    let found = db.fallback_for('●', primary.id()).unwrap();
+    assert_eq!(found.family, "Times New Roman");
+    assert!(found.covers('●'));
+    assert_ne!(db.fallback_for('●', found.id()).unwrap().id(), found.id(), "the excluded face cannot be reused");
+    assert_eq!(db.fallback_for('●', primary.id()).unwrap().id(), found.id());
+    let bold = db.fallback_styled('●', primary.id(), true, false).unwrap();
+    assert_eq!(bold.family, "Times New Roman");
+    assert!(bold.weight >= 600.0 && bold.covers('●'));
+    assert_eq!(db.fallback_for('A', primary.id()).unwrap().family, FALLBACK_FAMILY, "ordinary character fallback is unchanged");
+}
+
+#[test]
+fn circle_without_text_face() {
+    let db = FontDb::with_font_dirs(Vec::new());
+    db.set_system_fallback(false);
+    let primary = db.face("Source Serif 4", "Regular");
+    let found = db.fallback_for('●', primary.id()).unwrap();
+    assert_eq!(found.family, FALLBACK_FAMILY);
+    assert!(found.covers('●'));
+}
+
+#[test]
+fn circle_checks_face_coverage() {
+    let db = FontDb::with_font_dirs(Vec::new());
+    db.set_system_fallback(false);
+    db.add_document_fonts(vec![named_face("SourceSerif4-Regular.ttf", "Times New Roman")]);
+    let preferred = db.face("Times New Roman", "Regular");
+    assert!(!preferred.covers('●'));
+    let primary = db.face("Source Serif 4", "Regular");
+    assert_eq!(db.fallback_for('●', primary.id()).unwrap().family, FALLBACK_FAMILY);
 }
