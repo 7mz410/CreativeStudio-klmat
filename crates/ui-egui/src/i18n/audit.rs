@@ -352,7 +352,12 @@ fn complete_catalogs_have_every_string_the_interface_looked_up(mut keys: std::co
     let same = |s: &str| {
         matches!(
             s,
-            "LaTeX"
+            // Creative Studio branding in About: names, links, and the credit line stay as written.
+            "Creative\nStudio"
+                | "A free, open-source word processor, part of the Creative Studio suite.\nBuilt on WordCraft by the ArtCraft team."
+                | "Source code: github.com/7mz410/CreativeStudio-klmat"
+                | "klmat.studio.creative.ps"
+                | "LaTeX"
                 | "LaTeX (*.tex)"
                 | "Unicode"
                 | "I. II. III."
