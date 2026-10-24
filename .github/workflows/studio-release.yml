@@ -22,3 +22,7 @@ jobs:
       version_var: WORDCRAFT_VERSION
       bundle: klmat.app
       tag: ${{ github.ref_name }}
+      # Interface catalogs (upstream moved them to craft-i18n); our fork adds ar/wordcraft.tsv.
+      # Keep this SHA in step with studio/craft-i18n.rev.
+      i18n_repo: 7mz410/craft-i18n
+      i18n_ref: ee899b1f48ed4181806ea845d113738c5b283fdb
