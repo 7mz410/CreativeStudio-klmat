@@ -40,6 +40,8 @@ use craft_i18n::I18n;
 
 pub use craft_i18n::fmt;
 
+mod bidi;
+
 include!(concat!(env!("OUT_DIR"), "/craft_i18n.rs"));
 
 /// The embedded catalogs, offering exactly the languages in [`LANGUAGES`]. Built on first use;
@@ -69,7 +71,7 @@ pub struct LangInfo {
 
 /// The languages WordCraft offers, when their catalogs are embedded. English first: it is the
 /// fallback and the source language.
-pub static LANGUAGES: [LangInfo; 27] = [
+pub static LANGUAGES: [LangInfo; 28] = [
     LangInfo { code: "en", prefer_hans: false, editing_lang: None },
     // Simplified Chinese; `zh`, `zh-CN`, `zh-SG` and `zh-Hans-*` resolve here (the crate's matching).
     LangInfo { code: "zh-hans", prefer_hans: true, editing_lang: None },
@@ -123,6 +125,9 @@ pub static LANGUAGES: [LangInfo; 27] = [
     LangInfo { code: "ro", prefer_hans: false, editing_lang: None },
     // Slovenian; `sl`, `sl-SI` and `sl_SI.UTF-8` resolve here.
     LangInfo { code: "sl", prefer_hans: false, editing_lang: None },
+    // Arabic, right to left; `ar`, `ar-SA`, `ar_EG.UTF-8` resolve here. Its lookups come back in
+    // visual order ([`bidi`]).
+    LangInfo { code: "ar", prefer_hans: false, editing_lang: None },
 ];
 
 /// A language the UI can be shown in: English, or an offered language whose catalogs are embedded.
@@ -321,6 +326,15 @@ pub fn has(lang: Lang, s: &str) -> bool {
     lang.i18n().get(lang.lang, "", s).is_some()
 }
 
+/// A translation as egui should draw it: right-to-left languages come back in visual order, once
+/// per string ([`bidi::cached_visual`]); the others unchanged.
+fn display<'a>(lang: Lang, translated: &'a str) -> &'a str {
+    if !lang.i18n().rtl(lang.lang) || !bidi::has_rtl(translated) {
+        return translated;
+    }
+    bidi::cached_visual(translated)
+}
+
 /// `s` in the current language ([`tr`] with [`current`]).
 pub fn t(s: &str) -> &str {
     tr(current(), s)
@@ -338,7 +352,7 @@ pub fn trc<'a>(lang: Lang, context: &str, s: &'a str) -> &'a str {
     if pseudo::on() {
         return I18N.tc(craft_i18n::Lang::PSEUDO, context, s);
     }
-    lang.i18n().tc(lang.lang, context, s)
+    display(lang, lang.i18n().tc(lang.lang, context, s))
 }
 
 /// `s`'s translation for `context` in the current language, with no fallback to the plain row
@@ -350,7 +364,7 @@ pub fn get<'a>(context: &str, s: &'a str) -> Option<&'a str> {
         return I18N.get(craft_i18n::Lang::PSEUDO, context, s);
     }
     let lang = current();
-    lang.i18n().get(lang.lang, context, s)
+    lang.i18n().get(lang.lang, context, s).map(|t| display(lang, t))
 }
 
 /// Lowercase translated interface labels and UI search queries in the current language.
@@ -378,7 +392,7 @@ pub fn tr(lang: Lang, s: &str) -> &str {
     if pseudo::on() {
         return I18N.t(craft_i18n::Lang::PSEUDO, s);
     }
-    lang.i18n().t(lang.lang, s)
+    display(lang, lang.i18n().t(lang.lang, s))
 }
 
 /// A style's name as the interface shows it: built-in styles (`Normal`, `Heading 2`, `TOC 3`) in

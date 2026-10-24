@@ -125,6 +125,21 @@ fn current_language_is_per_thread() {
 }
 
 #[test]
+fn arabic_lookups_come_out_in_visual_order() {
+    needs_catalogs!();
+    let ar = lang("ar");
+    let source = "(no style)";
+    let logical = ar.i18n().t(ar.lang, source);
+    if logical == source {
+        eprintln!("skipped: the embedded catalogs have no Arabic {source:?}");
+        return;
+    }
+    let shown = tr(ar, source);
+    assert_eq!(shown, bidi::visual(logical));
+    assert_ne!(shown, logical, "Arabic words are reversed for drawing");
+}
+
+#[test]
 fn placeholders_fill_without_reinterpreting_values() {
     let args = [("path", "a-{pages}.docx"), ("pages", "2")];
     assert_eq!(fmt("{pages}: {path}; {unknown}", &args), "2: a-{pages}.docx; {unknown}");
