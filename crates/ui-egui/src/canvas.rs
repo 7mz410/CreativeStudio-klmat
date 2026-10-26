@@ -4067,7 +4067,7 @@ mod tests {
     #[test]
     fn read_mode_page_color_sets_the_reading_paper() {
         use wordcraft_doc::props::Rgb;
-        let mut a = WordApp::new(wordcraft_engine::Session::new(wordcraft_doc::Document::from_text("Hello WordCraft")), Default::default());
+        let mut a = WordApp::new(wordcraft_engine::Session::new(wordcraft_doc::Document::from_text("Hello klmat")), Default::default());
         a.run("design.pageColor", json!({"color": "#102040"})).unwrap();
         let paper = |a: &WordApp| page_render_options(a, false).paper_of(&a.session.doc);
         assert_eq!(paper(&a), Rgb(0x10, 0x20, 0x40), "Print Layout shows the page color");
@@ -5158,7 +5158,7 @@ mod tests {
     }
 
     fn assert_balloon_timestamp(when: &str) {
-        assert_eq!(when.len(), 16, "WordCraft comments carry a local YYYY-MM-DD HH:MM timestamp: {when:?}");
+        assert_eq!(when.len(), 16, "klmat comments carry a local YYYY-MM-DD HH:MM timestamp: {when:?}");
         let b = when.as_bytes();
         assert_eq!(
             (b.get(4), b.get(7), b.get(10), b.get(13)),
