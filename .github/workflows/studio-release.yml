@@ -25,4 +25,4 @@ jobs:
       # Interface catalogs (upstream moved them to craft-i18n); our fork adds ar/wordcraft.tsv.
       # Keep this SHA in step with studio/craft-i18n.rev.
       i18n_repo: 7mz410/craft-i18n
-      i18n_ref: 493044f3ea89389438081a8792c71ee7524597aa
+      i18n_ref: 19358491340b9f33d618673de6bcd40108d9a775
