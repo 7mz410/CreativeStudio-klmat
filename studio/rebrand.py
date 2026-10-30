@@ -29,12 +29,12 @@ RULES = [
     ('crates/ui-egui/src/keytips.rs', 'c("Community Discord", "ui.discord")', 'c("Creative Studio", "ui.discord")'),
     ('crates/ui-egui/src/chrome.rs', 'tl!("Join the ArtCraft community on Discord")', 'tl!("Creative Studio")'),
     # About.
-    ('crates/ui-egui/src/dialogs.rs', '"A free, open-source word processor written from scratch in Rust.\\nPart of the Crafting Apps from the ArtCraft team."',
+    ('crates/ui-egui/src/dialogs/dispatch.rs', '"A free, open-source word processor written from scratch in Rust.\\nPart of the Crafting Apps from the ArtCraft team."',
      '"A free, open-source word processor, part of the Creative Studio suite.\\nBuilt on WordCraft by the ArtCraft team."'),
-    ('crates/ui-egui/src/dialogs.rs', 'ui.hyperlink_to(tl!("getartcraft.com/apps/wordcraft"), "https://getartcraft.com/apps/wordcraft");',
+    ('crates/ui-egui/src/dialogs/dispatch.rs', 'ui.hyperlink_to(tl!("getartcraft.com/apps/wordcraft"), "https://getartcraft.com/apps/wordcraft");',
      f'ui.hyperlink_to(tl!("klmat.studio.creative.ps"), "{APP_SITE}");'),
-    ('crates/ui-egui/src/dialogs.rs', '                    ui.hyperlink_to(tl!("Join us on Discord: discord.gg/artcraft"), "https://discord.gg/artcraft");\n', ''),
-    ('crates/ui-egui/src/dialogs.rs', 'ui.hyperlink_to(tl!("Source code: github.com/storytold/wordcraft"), "https://github.com/storytold/wordcraft");',
+    ('crates/ui-egui/src/dialogs/dispatch.rs', '                    ui.hyperlink_to(tl!("Join us on Discord: discord.gg/artcraft"), "https://discord.gg/artcraft");\n', ''),
+    ('crates/ui-egui/src/dialogs/dispatch.rs', 'ui.hyperlink_to(tl!("Source code: github.com/storytold/wordcraft"), "https://github.com/storytold/wordcraft");',
      f'ui.hyperlink_to(tl!("Source code: github.com/7mz410/CreativeStudio-klmat"), "{REPO}");'),
     # Web page and packages.
     ('apps/wordcraft-web/index.html', '<title>WordCraft</title>', f'<title>{NAME}</title>'),
