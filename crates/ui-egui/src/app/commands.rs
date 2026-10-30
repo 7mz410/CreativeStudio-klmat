@@ -744,8 +744,7 @@ impl WordApp {
             // MCP get an error.
             "ui.makeDefaultApp" => {
                 return Some(Err(
-                    "making klmat the default app needs a click in File › Options › General; scripts and agents can't change system defaults"
-                        .into(),
+                    "making klmat the default app needs a click in File › Options › General; scripts and agents can't change system defaults".into(),
                 ));
             }
             "ui.discord" => {
